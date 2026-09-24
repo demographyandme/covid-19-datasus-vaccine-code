@@ -1,5 +1,13 @@
 # Age reporting in the Brazilian COVID-19 vaccination database: code and data
 
+[![Smoke tests](https://github.com/demographyandme/covid-19-datasus-vaccine-code/actions/workflows/smoke.yml/badge.svg)](https://github.com/demographyandme/covid-19-datasus-vaccine-code/actions/workflows/smoke.yml)
+[![Spell Check](https://github.com/demographyandme/covid-19-datasus-vaccine-code/actions/workflows/spell-check.yml/badge.svg)](https://github.com/demographyandme/covid-19-datasus-vaccine-code/actions/workflows/spell-check.yml)
+[![Link Check](https://github.com/demographyandme/covid-19-datasus-vaccine-code/actions/workflows/link-check.yml/badge.svg)](https://github.com/demographyandme/covid-19-datasus-vaccine-code/actions/workflows/link-check.yml)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE.md)
+[![Figures: CC BY 4.0](https://img.shields.io/badge/Figures-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Paper DOI](https://img.shields.io/badge/DOI-10.4054%2FDemRes.2023.48.28-blue)](https://doi.org/10.4054/DemRes.2023.48.28)
+[![Data DOI](https://img.shields.io/badge/Data_DOI-10.5281%2Fzenodo.7360803-blue)](https://doi.org/10.5281/zenodo.7360803)
+
 The R code and reference data behind:
 
 > Turra, Cássio M., Fernando Fernandes, Júlia Almeida Calazans, and Marília R.
