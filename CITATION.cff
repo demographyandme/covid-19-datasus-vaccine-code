@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the article below (preferred citation)."
+type: software
+title: "Age reporting in the Brazilian COVID-19 vaccination database: code and data"
+authors:
+  - family-names: "Turra"
+    given-names: "Cássio M."
+  - family-names: "Fernandes"
+    given-names: "Fernando"
+  - family-names: "Calazans"
+    given-names: "Júlia Almeida"
+  - family-names: "Nepomuceno"
+    given-names: "Marília R."
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/demographyandme/covid-19-datasus-vaccine-code"
+url: "https://demographyandme.github.io/covid-19-datasus-vaccine/"
+keywords:
+  - demography
+  - age reporting
+  - COVID-19 vaccination
+  - Brazil
+  - oldest old
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Turra"
+      given-names: "Cássio M."
+    - family-names: "Fernandes"
+      given-names: "Fernando"
+    - family-names: "Calazans"
+      given-names: "Júlia Almeida"
+    - family-names: "Nepomuceno"
+      given-names: "Marília R."
+  title: "Age Reporting in the Brazilian COVID-19 Vaccination Database: What Can We Learn from It?"
+  journal: "Demographic Research"
+  volume: 48
+  issue: 28
+  start: 829
+  end: 848
+  year: 2023
+  doi: "10.4054/DemRes.2023.48.28"
+references:
+  - type: dataset
+    authors:
+      - family-names: "Fernandes"
+        given-names: "Fernando"
+    title: "Open microdata registers from the Brazilian COVID-19 vaccination campaign"
+    version: 1.0.0
+    year: 2022
+    publisher:
+      name: "Zenodo"
+    doi: "10.5281/zenodo.7360803"

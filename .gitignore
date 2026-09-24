@@ -1,0 +1,23 @@
+# Microdata: downloaded from Zenodo (doi:10.5281/zenodo.7360803) and extracted
+# into data-raw/; about 190 GB uncompressed, never committed.
+data-raw/opendatasus-*.7z
+data-raw/opendatasus-*.csv
+
+# HMD reference list for Sweden: an HMD document available to registered users
+# only; the sources it lists are in data-raw/README.md.
+data-raw/SWEref.pdf
+
+# Intermediate files written by r-scripts/1-covid-19-datasus-vaccine.R. The
+# folder itself must exist (nothing creates it), hence .gitkeep.
+data-treated/*
+!data-treated/.gitkeep
+
+# R and RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# macOS
+.DS_Store
+._*

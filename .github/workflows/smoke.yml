@@ -1,0 +1,38 @@
+name: Smoke tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      # A fresh clone must already hold the folders the scripts write to.
+      - name: Folders the scripts need exist in a fresh clone
+        run: test -d data-raw && test -d data-treated && test -d output
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@6f6e5bc62fba3a704f74e7ad7ef7676c5c6a2590 # v2.11.4
+        with:
+          use-public-rspm: true
+
+      # install.packages() only warns on failure; fail the step if yaml is missing.
+      - name: Install yaml
+        run: Rscript -e 'install.packages("yaml"); if (!requireNamespace("yaml", quietly = TRUE)) quit(status = 1)'
+
+      - name: Run smoke tests
+        run: bash scripts/tests/run-all.sh
