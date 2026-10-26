@@ -73,10 +73,29 @@ main <- function() {
     # read as UTF-8 explicitly: yaml::read_yaml() fails on non-ASCII names under a C locale
     cff <- tryCatch(yaml::yaml.load(read_text("CITATION.cff")), error = function(e) { fail("citation: CITATION.cff does not parse: %s", conditionMessage(e)); NULL })
     pc <- cff$`preferred-citation`
+    # The paper's registered Crossref record (committed snapshot, also read
+    # by demographyandme.com's bibliography gate): the citation must match it.
+    reg <- yaml::yaml.load(read_text("scripts/tests/crossref-10.4054_demres.2023.48.28.json"))
     if (!is.null(cff)) {
-      if (!identical(pc$doi, "10.4054/DemRes.2023.48.28")) fail("citation: preferred-citation doi is %s, not the paper's", format(pc$doi))
-      if (!identical(pc$title, "Age Reporting in the Brazilian COVID-19 Vaccination Database: What Can We Learn from It?")) {
-        fail("citation: preferred-citation title is not the published title")
+      if (!identical(tolower(pc$doi), reg[["doi"]])) fail("citation: preferred-citation doi is %s, not the paper's", format(pc$doi))
+      if (!identical(pc$title, reg[["title"]])) {
+        fail("citation: preferred-citation title is not the registered title '%s'", reg[["title"]])
+      }
+      cff_names <- vapply(pc$authors, function(a) paste(a$`given-names`, a$`family-names`), "")
+      reg_names <- vapply(reg[["authors"]], function(a) paste(a$given, a$family), "")
+      cff_families <- vapply(pc$authors, function(a) a$`family-names`, "")
+      reg_families <- vapply(reg[["authors"]], function(a) a$family, "")
+      if (!identical(cff_names, reg_names) || !identical(cff_families, reg_families)) {
+        fail("citation: preferred-citation authors (%s) are not the registered byline (%s)",
+             paste(cff_names, collapse = "; "), paste(reg_names, collapse = "; "))
+      }
+      pages <- strsplit(reg[["page"]], "-", fixed = TRUE)[[1]]
+      if (!identical(as.character(c(pc$volume, pc$start, pc$end, pc$year)),
+                     c(reg[["volume"]], pages, substr(reg[["issued"]], 1, 4)))) {
+        fail("citation: preferred-citation volume, pages or year differ from the registered record")
+      }
+      if (!is.null(pc[["issue"]]) && is.null(reg[["issue"]])) {
+        fail("citation: preferred-citation has an issue, but %s is an article number, not an issue", format(pc[["issue"]]))
       }
     }
   }

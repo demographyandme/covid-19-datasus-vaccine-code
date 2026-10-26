@@ -71,7 +71,8 @@ Rows in the file but not used, 1751–1991:
 Brasil. 2021a. *Campanha Nacional de Vacinação contra Covid-19: Registros de
 Vacinação COVID-19, Open Data*. Ministério da Saúde, Sistema de Informação do
 Programa Nacional de Imunizações (SI-PNI). openDataSUS.
-https://opendatasus.saude.gov.br/dataset/covid-19-vacinacao/ (accessed 6 May 2021).
+https://opendatasus.saude.gov.br/dataset/covid-19-vacinacao/ (accessed 14 March
+2022, the extract `opendatasus-br-vaccination-2022-03-14.csv`).
 
 Brasil. 2021b. *Plano Nacional de Operacionalização da Vacinação contra a
 COVID-19*. 9th ed. Brasília, DF: Ministério da Saúde.
@@ -98,9 +99,9 @@ https://doi.org/10.18128/D020.V7.3. Census microdata for Brazil (1960, 1970,
 1980, 1991, 2000 and 2010) provided by the Instituto Brasileiro de Geografia e
 Estatística (IBGE).
 
-Turra, C. M., F. Fernandes, J. A. Calazans, and M. R. Nepomuceno. 2023. "Age
-reporting in the Brazilian COVID-19 vaccination database: What can we learn from
-it?" *Demographic Research* 48(28): 829–848.
+Turra, C. M., F. Fernandes, J. Almeida Calazans, and M. R. Nepomuceno. 2023.
+"Age reporting for the oldest old in the Brazilian COVID-19 vaccination
+database: What can we learn from it?" *Demographic Research* 48(28): 829–848.
 https://doi.org/10.4054/DemRes.2023.48.28.
 
 United Nations. 2019. *World Population Prospects 2019: Online Edition*. New
