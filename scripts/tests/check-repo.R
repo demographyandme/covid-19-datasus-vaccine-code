@@ -101,6 +101,16 @@ main <- function() {
   }
   if (length(failures) == n_before) ok("citation: CITATION.cff parses and cites the published paper")
 
+  # 3f. DemoTools (GitHub only) installs from a fixed commit, not the moving master branch
+  n_before <- length(failures)
+  pkgs <- read_text("r-scripts/packages.R")
+  if (!grepl('demotools_ref <- "[0-9a-f]{40}"', pkgs)) fail("packages: DemoTools is not pinned to a full commit SHA in r-scripts/packages.R")
+  gh_calls <- regmatches(pkgs, gregexpr("install_github\\([^)]*\\)", pkgs))[[1]]
+  if (!length(gh_calls) || !all(grepl("ref = demotools_ref", gh_calls, fixed = TRUE))) {
+    fail("packages: an install_github() call in r-scripts/packages.R has no pinned ref")
+  }
+  if (length(failures) == n_before) ok("packages: DemoTools installs from a pinned commit")
+
   failures <- unique(failures)
   if (length(failures)) {
     cat(paste0("FAIL ", failures, collapse = "\n"), "\n")
