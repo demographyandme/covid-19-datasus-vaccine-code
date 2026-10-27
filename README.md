@@ -37,8 +37,13 @@ repository; the additions here (`packages.R`, the tests) are separate files.
 
 ## Reproducing the results
 
-1. Install R and the packages: `source("r-scripts/packages.R")`. Versions are
-   not pinned; no versions were recorded when the analysis was run.
+1. Install R and the packages: `source("r-scripts/packages.R")`. No versions
+   were recorded when the analysis was run. CRAN packages install at their
+   current releases; DemoTools is pinned to commit `d1251fc` (2022-01-17,
+   version 01.13.76), the one current when the microdata were extracted, as a
+   reconstruction. Its heaping indices, the only DemoTools functions the
+   scripts call, have not changed since 2021-06-25. An existing DemoTools
+   installation is kept as is.
 2. Download the microdata from Zenodo and extract it into `data-raw/`
    ([instructions](data-raw/README.md#microdata)).
 3. Open `covid-19-vaccine.Rproj`, or start R in this folder, so that `here()`
