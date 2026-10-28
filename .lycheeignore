@@ -1,0 +1,6 @@
+# openDataSUS, the address the vaccination extract was taken from (accessed
+# 14 March 2022), no longer accepts connections: the portal moved to
+# dadosabertos.saude.gov.br and is moving again to dados.gov.br. The citation
+# keeps the address as accessed. Remove this line once the reference carries the
+# current address (audit tracker, X-04).
+opendatasus\.saude\.gov\.br/dataset/covid-19-vacinacao
