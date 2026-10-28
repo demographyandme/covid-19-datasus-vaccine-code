@@ -3,6 +3,7 @@ name: Link Check
 on:
   push:
     branches: [main]
+  pull_request:
   schedule:
     - cron: '0 7 * * 1'  # Mondays 07:00 UTC
   workflow_dispatch:
@@ -21,6 +22,7 @@ jobs:
       # 403, 415 and 429: publishers and DOI targets that refuse automated
       # requests, as in the demographyandme fleet's link checks.
       - name: Check links
+        id: lychee
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2.8.0
         with:
           args: >-
@@ -30,3 +32,17 @@ jobs:
             --accept 200,403,415,429
             README.md data-raw/README.md
           fail: true
+          jobSummary: true
+
+      # lychee's report names every broken link; repeat each as an annotation so it
+      # shows on the run page and through the API, not only in the job summary.
+      - name: Name the broken links
+        if: ${{ failure() && steps.lychee.outcome == 'failure' }}
+        shell: bash
+        run: |
+          # BEGIN lychee_annotate
+          [ -f lychee/out.md ] || { echo "::error title=Link check::no lychee report (lychee/out.md)"; exit 0; }
+          awk '/^## /{e=($0=="## Errors per input")}
+               e && /^### Errors in /{src=substr($0,15)}
+               e && /^\* \[/{m=src ": " substr($0,3); gsub(/%/,"%25",m); print "::error title=Broken link::" m}' lychee/out.md
+          # END lychee_annotate
