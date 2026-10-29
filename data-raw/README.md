@@ -71,7 +71,7 @@ Rows in the file but not used, 1751–1991:
 Brasil. 2021a. *Campanha Nacional de Vacinação contra Covid-19: Registros de
 Vacinação COVID-19, Open Data*. Ministério da Saúde, Sistema de Informação do
 Programa Nacional de Imunizações (SI-PNI). openDataSUS.
-https://opendatasus.saude.gov.br/dataset/covid-19-vacinacao/ (accessed 14 March
+https://dadosabertos.saude.gov.br/dataset/covid-19-vacinacao (accessed 14 March
 2022, the extract `opendatasus-br-vaccination-2022-03-14.csv`).
 
 Brasil. 2021b. *Plano Nacional de Operacionalização da Vacinação contra a
