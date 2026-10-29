@@ -19,20 +19,62 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
+      # lychee is installed here, not by lychee-action: the action re-downloads the
+      # binary from a release URL with no checksum (audit E2-21). The tarball must
+      # match the pinned sha256 (taken by the owner from the release file); a
+      # mismatch stops the job before anything runs.
+      - name: Install lychee (checksum-verified)
+        shell: bash
+        run: |
+          # BEGIN lychee_install
+          set -euo pipefail
+          version=v0.23.0
+          sha256=1fcb6ccf10d04c22b8c5873c5b9cb7be32ee7423e12169d6f1a79a6f1962ef81
+          file=lychee-x86_64-unknown-linux-gnu.tar.gz
+          [ "$(uname -m)" = x86_64 ] || { echo "::error title=lychee::no pinned build for $(uname -m)"; exit 1; }
+          dir="${RUNNER_TEMP}/lychee-${version}"
+          mkdir -p "${dir}"
+          curl -fsSL --retry 3 -o "${dir}/${file}" "https://github.com/lycheeverse/lychee/releases/download/lychee-${version}/${file}"
+          echo "${sha256}  ${dir}/${file}" | sha256sum -c - \
+            || { echo "::error title=lychee::${file} does not match the pinned sha256; not running it"; exit 1; }
+          tar -xzf "${dir}/${file}" -C "${dir}" lychee
+          install -D "${dir}/lychee" "${HOME}/.local/bin/lychee"
+          echo "${HOME}/.local/bin" >> "${GITHUB_PATH}"
+          "${HOME}/.local/bin/lychee" --version
+          # END lychee_install
+
       # 403, 415 and 429: publishers and DOI targets that refuse automated
       # requests, as in the demographyandme fleet's link checks.
       - name: Check links
         id: lychee
-        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2.8.0
-        with:
-          args: >-
-            --no-progress
-            --timeout 30
-            --max-retries 3
-            --accept 200,403,415,429
+        shell: bash
+        env:
+          # lychee uses it for github.com links (higher rate limit), as lychee-action did.
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          # BEGIN lychee_run
+          set -uo pipefail
+          mkdir -p lychee
+          lychee --mode task --format markdown --output lychee/out.md \
+            --no-progress \
+            --timeout 30 \
+            --max-retries 3 \
+            --accept 200,403,415,429 \
             README.md data-raw/README.md
-          fail: true
-          jobSummary: true
+          code=$?
+          if [ -f lychee/out.md ]; then
+            cat lychee/out.md
+            cat lychee/out.md >> "${GITHUB_STEP_SUMMARY}"
+          else
+            echo "::error title=Link check::lychee wrote no report (exit ${code})"
+          fi
+          # No link found at all means a configuration error, not a clean repository.
+          if grep -qE 'Total[[:space:]]+\|[[:space:]]+0[[:space:]]' lychee/out.md 2>/dev/null; then
+            echo "::error title=Link check::lychee found no links"
+            exit 1
+          fi
+          exit "${code}"
+          # END lychee_run
 
       # lychee's report names every broken link; repeat each as an annotation so it
       # shows on the run page and through the API, not only in the job summary.
