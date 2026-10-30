@@ -35,7 +35,7 @@ extract it into this folder, so that the script finds
 | `hmd-lt-source.csv` | Life expectancy by age from HMD life tables, Japan, Sweden and Switzerland, 1751–2019 | <!-- cite @HMD2021 -->Human Mortality Database (2021)<!-- /cite --> | CC BY 4.0 |
 | `hmd-pop-swe.csv` | Population by sex and single year of age, Sweden, 1751–2019, from the HMD Input Database | <!-- cite @HMD2021 -->Human Mortality Database (2021)<!-- /cite -->; see [Sweden population series](#sweden-population-series) | Terms of the original providers |
 | `hmd-country-codes.csv` | HMD country names and codes | <!-- cite @HMD2021 -->Human Mortality Database (2021)<!-- /cite --> | CC BY 4.0 |
-| `conass-excess-mortality-2020.csv`, `conass-excess-mortality-2021.csv`, `conass-overmortality-2020-2021.csv` | Excess deaths from natural causes by epidemiological week and region, and excess mortality by state and sex, 2020–2021 | <!-- cite @CONASS2021 -->CONASS (2021)<!-- /cite --> | Published by CONASS; no reuse licence stated (the panel now requires a login) |
+| `conass-excess-mortality-2020.csv`, `conass-excess-mortality-2021.csv`, `conass-overmortality-2020-2021.csv` | Excess deaths from natural causes by epidemiological week and region, and excess mortality by state and sex, 2020–2021 | <!-- cite @CONASS2021 -->CONASS (Conselho Nacional de Secretários de Saúde) (2021)<!-- /cite --> | Published by CONASS; no reuse licence stated (the panel now requires a login) |
 | `br-state-codes.csv` | Brazilian federative units: names, IBGE codes and regions | Lookup table | — |
 
 The vaccination records were downloaded from openDataSUS on 14 March 2022, the
@@ -52,4 +52,23 @@ source in the HMD reference list for Sweden.
 ## References
 
 <!-- references Brasil2021c -->
+
+Brasil. 2021a. “Campanha Nacional de Vacinação contra Covid-19 - Registros de Vacinação COVID-19 - Open Data.” Portal de Dados Abertos do SUS. <https://dadosabertos.saude.gov.br/dataset/covid-19-vacinacao>.
+
+Brasil. 2021b. *Plano nacional de operacionalização da vacinação contra a COVID-19*. 9th ed. Brasília, DF.
+
+CONASS (Conselho Nacional de Secretários de Saúde). 2021. “Painel de análise do excesso de mortalidade por causas naturais no Brasil.” <https://www.conass.org.br/indicadores-de-obitos-por-causas-naturais/>.
+
+Fernandes, Fernando. 2022. “Open microdata registers from the Brazilian COVID-19 vaccination campaign.” Version 1.0.0. Zenodo, March 14. <https://doi.org/10.5281/ZENODO.7360803>.
+
+Human Mortality Database. 2021. *HMD*. University of California, Berkeley (USA) and Max Planck Institute for Demographic Research (Germany). <https://www.mortality.org>.
+
+IBGE. 2018. *Projeções da população: Brasil e unidades da federação - revisão 2018*. 2nd ed. Série relatórios metodológicos, volume 40. IBGE, Coordenação de População e Indicadores Sociais. <https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados>.
+
+Minnesota Population Center. 2020. “Integrated Public Use Microdata Series, International: Version 7.3.” Minneapolis, MN: IPUMS. <https://doi.org/10.18128/D020.V7.3>.
+
+Turra, Cássio M., Fernando Fernandes, Júlia Almeida Calazans, and Marília R. Nepomuceno. 2023. “Age Reporting for the Oldest Old in the Brazilian COVID-19 Vaccination Database: What Can We Learn from It?” *Demographic Research* 48 (28): 829–48. <https://doi.org/10.4054/DemRes.2023.48.28>.
+
+United Nations. 2019. *World Population Prospects 2019: Online Edition*. United Nations, Department of Economic and Social Affairs, Population Division.
+
 <!-- /references -->
