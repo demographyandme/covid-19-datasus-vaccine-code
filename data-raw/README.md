@@ -33,38 +33,21 @@ extract it into this folder, so that the script finds
 | `wpp-life-table-source.csv` | Life table by sex, Brazil, 2020–2025 | United Nations (2019) | [CC BY 3.0 IGO](https://creativecommons.org/licenses/by/3.0/igo/) |
 | `ipums-br-1960-2010-pop-80-plus.csv` | Population aged 80 and over by single year of age, sex and region, tabulated from the 1960, 1970, 1980, 1991, 2000 and 2010 census samples | Minnesota Population Center (2020); IBGE, censuses 1960–2010 | Tabulation published under the IPUMS International conditions of use; the microdata are not redistributed |
 | `hmd-lt-source.csv` | Life expectancy by age from HMD life tables, Japan, Sweden and Switzerland, 1751–2019 | Human Mortality Database (2021) | CC BY 4.0 |
-| `hmd-pop-swe.csv` | Population by sex and single year of age, Sweden, 1751–2019, from the HMD Input Database | Statistics Sweden and other Swedish sources (24 in all, one per HMD reference code), via Human Mortality Database (2021); see the table below | Terms of the original providers |
+| `hmd-pop-swe.csv` | Population by sex and single year of age, Sweden, 1751–2019, from the HMD Input Database | Human Mortality Database (2021); see [Sweden population series](#sweden-population-series) | Terms of the original providers |
 | `hmd-country-codes.csv` | HMD country names and codes | Human Mortality Database (2021) | CC BY 4.0 |
 | `conass-excess-mortality-2020.csv`, `conass-excess-mortality-2021.csv`, `conass-overmortality-2020-2021.csv` | Excess deaths from natural causes by epidemiological week and region, and excess mortality by state and sex, 2020–2021 | CONASS (2021) | Published by CONASS; no reuse licence stated (the panel now requires a login) |
 | `br-state-codes.csv` | Brazilian federative units: names, IBGE codes and regions | Lookup table | — |
 
-## Original sources of the Sweden population series
+The vaccination records were downloaded from openDataSUS on 14 March 2022, the
+HMD files on 1 May 2021 and the CONASS panel on 16 June 2021.
 
-`hmd-pop-swe.csv` links every row to its original source through the HMD
-reference code (`RefCode`). The file cites 24 sources; they are listed here,
-as given in the HMD reference list for Sweden, rather than in the general
-references below. The analysis uses the years 1992–2019 (the figures show 2019).
+## Sweden population series
 
-Rows used in the analysis, 1992–2019:
-
-| RefCode | Years | Source |
-|---|---|---|
-| 39 | 1992–2001 | Lundström, H. Annual population register counts as of 31 December, 1990–2001. Unpublished computer file, Statistics Sweden, received 24 July 2002. |
-| 42 | 2002 | Statistiska Centralbyrån (2002). Tabell 1.1, p. 16 in: *Befolkningsstatistik del 1–2, 2002*. |
-| 45 | 2003 | Statistiska Centralbyrån (2004). Tabell 1.5, pp. 20–21 in: *Befolkningsstatistik 2003, del 4*. |
-| 47, 48, 51, 53 | 2004–2007 | Statistiska Centralbyrån. *Swedish Population on December 31, [year], by sex and age*, www.scb.se, retrieved 2005–2008. |
-| 15, 17, 55 | 2008–2011 | Statistics Sweden. *Swedish Population on December 31, [year], by sex and age*, www.scb.se, retrieved 2010–2012. |
-| 60 | 2012–2014 | Statistics Sweden. Population by year, single year of age and sex, 2012–2014, received directly from Statistics Sweden (10 September 2015). |
-| 68, 72, 76, 80 | 2015–2019 | Statistics Sweden. Population by year, single year of age and sex, received directly from Statistics Sweden (2017–2020). |
-
-Rows in the file but not used, 1751–1991:
-
-| RefCode | Years | Source |
-|---|---|---|
-| 31 | 1751–1860 | Sundbärg, G. (1908). "VIII. Medelfolkmängden efter ålder och kön, för beräkning af dödstalen." Pp. 186–230 in: *Statistisk Tidskrift*. Stockholm: P.A. Norstedt & Söners Förlag. Mid-year population estimates by five-year age group. |
-| 32–38 | 1860–1967 (census and estimate years) | Statistiska Centralbyrån, census publications 1860–1950 and *Befolkningsrörelsen år 1960*; Lundström, H., population register counts 1965–1967 |
-| 40 | 1970–1989 | Lundström, H. Annual population register counts as of 31 December, 1970–1989. Unpublished computer files, Statistics Sweden, received 23 August 2002. |
-| 60 | 1860–1991 | Statistics Sweden. *Swedish Population (in one-year groups) 1860–2014*, www.scb.se, retrieved 17 June 2015. This extract labels these rows 60; the current HMD reference list files the same series under 59. |
+`hmd-pop-swe.csv` comes from the HMD Input Database. As Turra et al. (2023) report, the data for
+Sweden were drawn from the Human Mortality Database (2021); the analysis uses the
+Swedish raw data for 1992–2019, population by sex and single year of age up to
+110 and older. The file's `RefCode` column links each row to its original
+source in the HMD reference list for Sweden.
 
 ## References
 
