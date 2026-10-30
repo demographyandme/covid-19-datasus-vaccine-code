@@ -11,6 +11,9 @@
 The R code and reference data behind:
 
 <!-- references Turra2023 -->
+
+Turra, Cássio M., Fernando Fernandes, Júlia Almeida Calazans, and Marília R. Nepomuceno. 2023. “Age Reporting for the Oldest Old in the Brazilian COVID-19 Vaccination Database: What Can We Learn from It?” *Demographic Research* 48 (28): 829–48. <https://doi.org/10.4054/DemRes.2023.48.28>.
+
 <!-- /references -->
 
 The vaccination microdata are archived on Zenodo,
