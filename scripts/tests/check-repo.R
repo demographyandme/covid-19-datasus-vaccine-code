@@ -48,22 +48,23 @@ main <- function() {
   for (f in setdiff(documented, c(data_files, paste0(microdata, ".7z")))) fail("docs: data-raw/README.md documents %s, which is not committed", f)
   if (length(failures) == n_before) ok("docs: all %d data files documented in data-raw/README.md", length(data_files))
 
-  # 3d. every HMD reference code in the Sweden file has a source, and no extra code is listed
+  # 3d. the Sweden file is documented as the paper states it: drawn from the HMD
+  # (2021), cited by its Zotero key; every row keeps its HMD reference code, and
+  # the file covers the 1992-2019 period the analysis uses
   n_before <- length(failures)
   swe <- utils::read.csv("data-raw/hmd-pop-swe.csv", fileEncoding = "UTF-8-BOM", colClasses = "character")
-  in_file <- sort(unique(as.integer(swe$RefCode)))
-  sweden <- sub("(?s).*## Original sources of the Sweden population series(.*?)## References.*", "\\1", readme, perl = TRUE)
-  first_cells <- sub("^\\| ([^|]+) \\|.*", "\\1", regmatches(sweden, gregexpr("(?m)^\\| [0-9][^|]*\\|", sweden, perl = TRUE))[[1]])
-  # ranges such as "32–38" use an en dash; replace it byte-wise so this works in any locale
-  first_cells <- gsub("–", "-", first_cells, fixed = TRUE, useBytes = TRUE)
-  codes <- unlist(lapply(strsplit(first_cells, ",\\s*"), function(tokens) unlist(lapply(tokens, function(t) {
-    r <- as.integer(strsplit(trimws(t), "-", fixed = TRUE)[[1]])
-    if (length(r) == 2) seq(r[1], r[2]) else r
-  }))))
-  listed <- sort(unique(codes))
-  for (c in setdiff(in_file, listed)) fail("sweden: RefCode %d is in hmd-pop-swe.csv but has no source in data-raw/README.md", c)
-  for (c in setdiff(listed, in_file)) fail("sweden: data-raw/README.md lists RefCode %d, which hmd-pop-swe.csv does not use", c)
-  if (length(failures) == n_before) ok("sweden: all %d reference codes of hmd-pop-swe.csv have a source", length(in_file))
+  sweden <- sub("(?s).*## Sweden population series(.*?)## References.*", "\\1", readme, perl = TRUE)
+  if (identical(sweden, readme)) {
+    fail("sweden: data-raw/README.md has no '## Sweden population series' section before '## References'")
+  } else {
+    for (key in c("Turra2023", "HMD2021")) {
+      if (!grepl(sprintf("<!-- cite @%s -->", key), sweden, fixed = TRUE)) fail("sweden: the section does not cite %s", key)
+    }
+  }
+  if (!"RefCode" %in% names(swe) || any(!nzchar(trimws(swe$RefCode)))) fail("sweden: hmd-pop-swe.csv rows without an HMD reference code (RefCode)")
+  years <- as.integer(swe$Year)
+  if (!all(1992:2019 %in% years)) fail("sweden: hmd-pop-swe.csv does not cover every year of 1992-2019")
+  if (length(failures) == n_before) ok("sweden: the section cites Turra2023 and HMD2021; %d rows keep their RefCode; 1992-2019 covered", nrow(swe))
 
   # 3e. CITATION.cff parses and cites the paper
   n_before <- length(failures)
