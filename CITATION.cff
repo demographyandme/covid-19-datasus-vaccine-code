@@ -1,52 +1,58 @@
+# authors, preferred-citation and references are generated from my-academic-website
+# bib/pubs.bib and bib/sources.bib (scripts/bin/render-cited-repos.R); edit the other fields here.
 cff-version: 1.2.0
-message: "If you use this code or data, please cite the article below (preferred citation)."
-type: software
-title: "Age reporting for the oldest old in the Brazilian COVID-19 vaccination database: code and data"
+message: If you use this code or data, please cite the article below (preferred citation).
 authors:
-  - family-names: "Turra"
-    given-names: "Cássio M."
-  - family-names: "Fernandes"
-    given-names: "Fernando"
-  - family-names: "Almeida Calazans"
-    given-names: "Júlia"
-  - family-names: "Nepomuceno"
-    given-names: "Marília R."
+  - family-names: Turra
+    given-names: Cássio M.
+  - family-names: Fernandes
+    given-names: Fernando
+  - family-names: Almeida Calazans
+    given-names: Júlia
+  - family-names: Nepomuceno
+    given-names: Marília R.
+title: 'Age reporting for the oldest old in the Brazilian COVID-19 vaccination database:
+  code and data'
 version: 1.0.0
+url: https://demographyandme.github.io/covid-19-datasus-vaccine/
+repository-code: https://github.com/demographyandme/covid-19-datasus-vaccine-code
 license: MIT
-repository-code: "https://github.com/demographyandme/covid-19-datasus-vaccine-code"
-url: "https://demographyandme.github.io/covid-19-datasus-vaccine/"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Turra
+      given-names: Cássio M.
+    - family-names: Fernandes
+      given-names: Fernando
+    - family-names: Almeida Calazans
+      given-names: Júlia
+    - family-names: Nepomuceno
+      given-names: Marília R.
+  title: 'Age reporting for the oldest old in the Brazilian COVID-19 vaccination database:
+    What can we learn from it?'
+  journal: Demographic Research
+  volume: 48
+  start: 829
+  end: 848
+  year: 2023
+  doi: 10.4054/DemRes.2023.48.28
+references:
+  - type: data
+    authors:
+      - family-names: Fernandes
+        given-names: Fernando
+    title: Open microdata registers from the Brazilian COVID-19 vaccination campaign
+    year: 2022
+    publisher:
+      name: Zenodo
+    doi: 10.5281/ZENODO.7360803
+    languages:
+      - pt
+    version: 1.0.0
+type: software
 keywords:
   - demography
   - age reporting
   - COVID-19 vaccination
   - Brazil
   - oldest old
-preferred-citation:
-  type: article
-  authors:
-    - family-names: "Turra"
-      given-names: "Cássio M."
-    - family-names: "Fernandes"
-      given-names: "Fernando"
-    - family-names: "Almeida Calazans"
-      given-names: "Júlia"
-    - family-names: "Nepomuceno"
-      given-names: "Marília R."
-  title: "Age reporting for the oldest old in the Brazilian COVID-19 vaccination database: What can we learn from it?"
-  journal: "Demographic Research"
-  volume: 48
-  start: 829
-  end: 848
-  year: 2023
-  doi: "10.4054/DemRes.2023.48.28"
-references:
-  - type: data
-    authors:
-      - family-names: "Fernandes"
-        given-names: "Fernando"
-    title: "Open microdata registers from the Brazilian COVID-19 vaccination campaign"
-    version: 1.0.0
-    year: 2022
-    publisher:
-      name: "Zenodo"
-    doi: "10.5281/zenodo.7360803"
