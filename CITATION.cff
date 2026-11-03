@@ -1,5 +1,5 @@
 # authors, preferred-citation and references are generated from my-academic-website
-# bib/pubs.bib and bib/sources.bib (scripts/bin/render-cited-repos.R); edit the other fields here.
+# bib/pubs.bib and bib/sources.bib (scripts/bin/render-citations.R); edit the other fields here.
 cff-version: 1.2.0
 message: If you use this code or data, please cite the article below (preferred citation).
 authors:
@@ -31,9 +31,9 @@ preferred-citation:
   title: 'Age reporting for the oldest old in the Brazilian COVID-19 vaccination database:
     What can we learn from it?'
   journal: Demographic Research
-  volume: 48
-  start: 829
-  end: 848
+  volume: '48'
+  start: '829'
+  end: '848'
   year: 2023
   doi: 10.4054/DemRes.2023.48.28
 references:
