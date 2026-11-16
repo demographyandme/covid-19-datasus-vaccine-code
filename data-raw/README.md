@@ -55,7 +55,7 @@ source in the HMD reference list for Sweden.
 
 Brasil. 2021a. “Campanha Nacional de Vacinação contra Covid-19 - Registros de Vacinação COVID-19 - Open Data.” Portal de Dados Abertos do SUS. <https://dadosabertos.saude.gov.br/dataset/covid-19-vacinacao>.
 
-Brasil. 2021b. *Plano nacional de operacionalização da vacinação contra a COVID-19*. 9th ed. Brasília, DF.
+Brasil. 2021b. *Plano nacional de operacionalização da vacinação contra a COVID-19*. 9th ed. Ministério da Saúde.
 
 CONASS (Conselho Nacional de Secretários de Saúde). 2021. “Painel de análise do excesso de mortalidade por causas naturais no Brasil.” <https://www.conass.org.br/indicadores-de-obitos-por-causas-naturais/>.
 
