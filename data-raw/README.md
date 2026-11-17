@@ -67,7 +67,7 @@ IBGE. 2018. *Projeções da população: Brasil e unidades da federação - revi
 
 Minnesota Population Center. 2020. “Integrated Public Use Microdata Series, International: Version 7.3.” Minneapolis, MN: IPUMS. <https://doi.org/10.18128/D020.V7.3>.
 
-Turra, Cássio M., Fernando Fernandes, Júlia Almeida Calazans, and Marília R. Nepomuceno. 2023. “Age Reporting for the Oldest Old in the Brazilian COVID-19 Vaccination Database: What Can We Learn from It?” *Demographic Research* 48 (28): 829–48. <https://doi.org/10.4054/DemRes.2023.48.28>.
+Turra, Cássio M., Fernando Fernandes, Júlia Almeida Calazans, and Marília R. Nepomuceno. 2023. “Age Reporting for the Oldest Old in the Brazilian COVID-19 Vaccination Database: What Can We Learn from It?” *Demographic Research* 48 (28): 829–48. <https://doi.org/10.4054/demres.2023.48.28>.
 
 United Nations. 2019. *World Population Prospects 2019: Online Edition*. United Nations, Department of Economic and Social Affairs, Population Division.
 
