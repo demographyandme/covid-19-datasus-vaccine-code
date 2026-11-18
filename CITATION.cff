@@ -45,7 +45,7 @@ references:
     year: 2022
     publisher:
       name: Zenodo
-    doi: 10.5281/ZENODO.7360803
+    doi: 10.5281/zenodo.7360803
     languages:
       - pt
     version: 1.0.0
