@@ -59,13 +59,13 @@ Brasil. 2021b. *Plano nacional de operacionalização da vacinação contra a CO
 
 CONASS (Conselho Nacional de Secretários de Saúde). 2021. “Painel de análise do excesso de mortalidade por causas naturais no Brasil.” <https://www.conass.org.br/indicadores-de-obitos-por-causas-naturais/>.
 
-Fernandes, Fernando. 2022. “Open microdata registers from the Brazilian COVID-19 vaccination campaign.” Version 1.0.0. Zenodo, March 14. <https://doi.org/10.5281/ZENODO.7360803>.
+Fernandes, Fernando. 2022. “Open microdata registers from the Brazilian COVID-19 vaccination campaign.” Version 1.0.0. Zenodo, March 14. <https://doi.org/10.5281/zenodo.7360803>.
 
 Human Mortality Database. 2021. *HMD*. University of California, Berkeley (USA) and Max Planck Institute for Demographic Research (Germany). <https://www.mortality.org>.
 
 IBGE. 2018. *Projeções da população: Brasil e unidades da federação - revisão 2018*. 2nd ed. Série relatórios metodológicos, volume 40. IBGE, Coordenação de População e Indicadores Sociais. <https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados>.
 
-Minnesota Population Center. 2020. “Integrated Public Use Microdata Series, International: Version 7.3.” Minneapolis, MN: IPUMS. <https://doi.org/10.18128/D020.V7.3>.
+Minnesota Population Center. 2020. “Integrated Public Use Microdata Series, International: Version 7.3.” Minneapolis, MN: IPUMS. <https://doi.org/10.18128/d020.v7.3>.
 
 Turra, Cássio M., Fernando Fernandes, Júlia Almeida Calazans, and Marília R. Nepomuceno. 2023. “Age Reporting for the Oldest Old in the Brazilian COVID-19 Vaccination Database: What Can We Learn from It?” *Demographic Research* 48 (28): 829–48. <https://doi.org/10.4054/demres.2023.48.28>.
 
