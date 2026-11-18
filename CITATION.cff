@@ -41,13 +41,11 @@ references:
     authors:
       - family-names: Fernandes
         given-names: Fernando
-    title: Open microdata registers from the Brazilian COVID-19 vaccination campaign
+    title: Open Microdata Registers from the Brazilian COVID-19 Vaccination Campaign
     year: 2022
     publisher:
       name: Zenodo
     doi: 10.5281/zenodo.7360803
-    languages:
-      - pt
     version: 1.0.0
 type: software
 keywords:

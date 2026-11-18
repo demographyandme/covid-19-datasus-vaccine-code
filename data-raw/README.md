@@ -59,7 +59,7 @@ Brasil. 2021b. *Plano nacional de operacionalização da vacinação contra a CO
 
 CONASS (Conselho Nacional de Secretários de Saúde). 2021. “Painel de análise do excesso de mortalidade por causas naturais no Brasil.” <https://www.conass.org.br/indicadores-de-obitos-por-causas-naturais/>.
 
-Fernandes, Fernando. 2022. “Open microdata registers from the Brazilian COVID-19 vaccination campaign.” Version 1.0.0. Zenodo, March 14. <https://doi.org/10.5281/zenodo.7360803>.
+Fernandes, Fernando. 2022. “Open Microdata Registers from the Brazilian COVID-19 Vaccination Campaign.” Version 1.0.0. Zenodo, March 14. <https://doi.org/10.5281/zenodo.7360803>.
 
 Human Mortality Database. 2021. *HMD*. University of California, Berkeley (USA) and Max Planck Institute for Demographic Research (Germany). <https://www.mortality.org>.
 
